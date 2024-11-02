@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Jockey One;
   line-height: 1.5;
   font-weight: 400;
 
@@ -65,4 +66,10 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+//--------------------------------Homepage--------------------------------
+
+.home {
+  
 }
