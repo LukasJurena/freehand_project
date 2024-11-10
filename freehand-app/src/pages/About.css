@@ -1,0 +1,117 @@
+/* Container that holds the timeline */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  .AboutNadpis h1 {
+    text-align: center;  /* Center the title */
+    color: var(--main);  /* Set the color to var(--main) */
+    font-size: 3rem;  /* Optional: Adjust font size */
+    margin-bottom: 40px; /* Optional: Add space below the heading */
+  }
+  
+  /* Timeline container */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Adds space between items */
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  /* Each timeline item */
+  .timeline-item {
+    display: flex;
+    align-items: center; /* Align items horizontally */
+    opacity: 0; /* Initially hidden for animation */
+    margin: 0 auto;
+    position: relative; /* Needed for the pseudo element */
+  }
+  
+  /* Add a line between timeline items */
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 25px;
+    width: 6px;
+    height: 132%;
+    background-color: var(--main);
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  
+  /* Prevent line on last item */
+  .timeline-item:last-child::before {
+    display: none;
+  }
+  
+  /* Year circle styling */
+  .timeline-year {
+    width: 50px;
+    height: 50px;
+    background-color: var(--main);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px; /* Space between year and content */
+    z-index: 1;
+  }
+  
+  /* Content box styling */
+  .timeline-content {
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+  }
+  
+  /* Description text styling */
+  .timeline-content p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .timeline {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      gap: 20px; /* Smaller gap on mobile */
+    }
+  
+    .timeline-item {
+      align-items: flex-start; /* Align items to the left */
+      margin: 0 0 0 25px;
+    }
+  
+    .timeline-year {
+      font-size: 16px; /* Smaller year circle on mobile */
+      margin-right: 10px; /* Reduce space between year and content on mobile */
+    }
+  
+    .timeline-content {
+      width: 100%; /* Make content box take full width on mobile */
+    }
+  
+    .timeline-item::before {
+      left: 50%;
+      transform: translateX(-50%);
+      height: auto;
+      width: 2px;
+    }
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+  }
