@@ -172,6 +172,10 @@ button:focus-visible {
 @media (max-width: 768px) {
   .home-title {
     font-size: 3rem;
+    margin: 40% 0 0 0;
+  }
+  .home-title span{
+    margin: 40% 0 0 0;
   }
   .sub-title {
     font-size: 1.5rem;
@@ -224,10 +228,7 @@ button:focus-visible {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 20px;
-  white-space: nowrap;  /* Zajistí, že text nebude zalamován */
   color: #333;
-  opacity: 1;  /* Zajistí, že text je viditelný */
-  transform: translateX(0); /* Zajistí, že text je na správné pozici */
 }
 
 .service-title + p {
@@ -237,6 +238,7 @@ button:focus-visible {
   max-width: 800px;
   margin-top: 20px;
 }
+
 .contact-button-container {
   display: flex;
   justify-content: left;
@@ -247,9 +249,9 @@ button:focus-visible {
   padding: 12px 30px;
   font-size: 1.2rem;
   font-weight: bold;
-  background-color: var(--hover); /* Zde můžeš použít svou vlastní barvu */
+  background-color: var(--hover);
   color: white;
-  text-decoration: none; /* Zajišťuje, že odkaz nebude podtržený */
+  text-decoration: none;
   border: none;
   border-radius: 0;
   cursor: pointer;
@@ -257,13 +259,67 @@ button:focus-visible {
 }
 
 .contact-button:hover {
-  background-color: darkred; /* Efekt při najetí na odkaz */
+  background-color: darkred;
 }
 
 .contact-button:visited {
-  color: white; /* Zajišťuje, že text zůstane bílý i po kliknutí */
+  color: white;
 }
 
 .contact-button:focus {
-  outline: none; /* Zrušení rámečku při zaměření na odkaz */
+  outline: none;
+}
+
+/* Responzivní styl pro menší obrazovky */
+@media (max-width: 768px) {
+  .service-title {
+    font-size: 2rem; /* Zmenšení nadpisu */
+  }
+
+  .service-title + p {
+    font-size: 1rem; /* Zmenšení textu pod nadpisem */
+  }
+
+  .contact-button {
+    padding: 10px 20px; /* Zmenšení tlačítka */
+    font-size: 1rem;    /* Zmenšení velikosti textu tlačítka */
+  }
+}
+
+@media (max-width: 480px) {
+  .service-title {
+    font-size: 1.5rem; /* Ještě menší nadpis pro velmi malé obrazovky */
+  }
+
+  .service-title + p {
+    font-size: 0.9rem;
+  }
+
+  .contact-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+//--------------------------------About-------------------------------------
+.about-page {
+  overflow-x: hidden;
+}
+
+.timeline-container {
+  display: flex;
+  width: max-content;
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+
+.timeline-event {
+  min-width: 300px;
+  padding: 20px;
+  margin-right: 40px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
 }

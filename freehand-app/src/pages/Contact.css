@@ -1,0 +1,88 @@
+/* Základní styly pro komponentu */
+.contact {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Nadpis */
+  .contact h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--main); /* Použití barvy z proměnné */
+  }
+  
+  /* Kontaktní info kontejner */
+  .contact-info {
+    display: flex;
+    flex-direction: row; /* Vše pod sebou */
+    gap: 30px; /* Mezera mezi skupinami */
+    margin-top: 150px;
+  }
+  
+  /* Skupina kontaktů */
+  .contact-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Kontaktní položky */
+  .contact-item {
+    padding: 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+  }
+  
+  .contact-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: -20px;
+    color: var(--main); /* Použití hlavní barvy */
+  }
+  
+  .contact-item p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Odkazy */
+  .contact-item a {
+    font-size: 1rem;
+    color: #333; /* Normální barva odkazu */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Přechodová animace při změně barvy */
+  }
+  
+  .contact-item a:hover {
+    color: var(--hover); /* Barva při najetí myší (z proměnné) */
+  }
+  
+  /* Responsivní design pro mobilní zařízení */
+  @media (max-width: 768px) {
+    .contact-info {
+      gap: 20px; /* Menší mezery na mobilu */
+      flex-direction: column;
+      margin-top: 20px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .contact-item {
+      padding: 15px;
+    }
+  
+    .contact-item h3 {
+      font-size: 1.1rem;
+    }
+  
+    .contact-item p {
+      font-size: 0.9rem;
+    }
+  }
+  

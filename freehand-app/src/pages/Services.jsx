@@ -12,6 +12,7 @@ const Services = () => {
   const buttonRef = useRef(null);  // Odkaz na tlačítko
 
   useEffect(() => {
+    document.title = "Služby - Ing. René Kafka";
     // Animace pro první nadpis
     gsap.fromTo(
       titleRef1.current, 
