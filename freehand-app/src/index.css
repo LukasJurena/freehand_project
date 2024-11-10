@@ -74,21 +74,22 @@ button:focus-visible {
 //--------------------------------Homepage--------------------------------
 
 .home {
-  display: flex; /* Používáme flexbox pro centrální zarovnání */
-  justify-content: center; /* Vertikální vycentrování */
-  align-items: center; /* Horizontální vycentrování */
-  min-height: 100vh; /* Nastavíme výšku na 100% výšky okna */
+  display: flex;
+  flex-direction: column; /* Vertikální uspořádání */
+  min-height: 100vh !important; /* Nastaví minimální výšku na 100 % výšky okna */
   padding-top: 60px; /* Prostor pro navbar */
 }
 
+/* Obsah uvnitř domovského kontejneru */
 .home-container {
+  flex: 1; /* Vytvoří prostor mezi obsahem a footerem */
   width: 100%;
   max-width: 1240px; /* Maximální šířka kontejneru */
   margin: 0 auto;
   display: flex;
-  flex-direction: column; /* Zobrazí obsah vertikálně */
-  align-items: center; /* Horizontální vycentrování */
-  justify-content: center; /* Vertikální vycentrování */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-title {
@@ -110,17 +111,15 @@ button:focus-visible {
   display: inline-block;
   width: 1rem;  /* Můžeš upravit podle potřeby */
 }
-.sub-title {
-  font-size: 1.8rem;
-  color: var(--second);
-  margin: 20px 0;
-  text-align: left;
+
+
+.home-container .links {
+  display: flex;
+  gap: 15px;
+  margin-top: 50px;
 }
 
-.links {
-  margin-top: 30px;
-}
-.link {
+.home-container .link {
   position: relative;
   font-size: 1.5rem;
   margin: 10px;
@@ -130,34 +129,43 @@ button:focus-visible {
   display: inline-block;
 }
 
-.link span {
+.home-container .link span {
   position: absolute;
-  bottom: 0;
+  bottom: 30px;
   left: 0;
   width: 0;
   height: 2px;
   background-color: #BB342F;
   transition: width 0.3s ease;
 }
-
-.link:hover {
+.home-container .link:nth-child(2) span {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 0;
+  height: 0px;
+  background-color: #BB342F;
+  transition: width 0.3s ease;
+}
+.home-container .link:hover {
   cursor: pointer;
 }
 
-.link:hover span {
+.home-container .link:hover span {
   width: 100%; /* Ukáže podtržení při hoveru */
 }
 
-.link {
-  font-size: 1.5rem;
-  margin: 10px;
-  color: var(--main);
-  text-decoration: none;
-  transition: color 0.3s ease;
+.home-container .link:nth-child(2) {
+  background-color: var(--hover);  /* Druhé tlačítko bude mít červenou barvu */
+  color: var(--bg);
+  border-radius: 0;
+  padding: 15px 30px;
+  bottom: 15px;
 }
 
-.link:hover {
-  color: var(--hover);
+.home-container .link:nth-child(2):hover {
+  color: white;
+  background-color: darkred;
 }
 
 /* Responsive design pro menší obrazovky */
@@ -168,4 +176,94 @@ button:focus-visible {
   .sub-title {
     font-size: 1.5rem;
   }
+}
+.home-container .sub-title {
+  position: relative;
+  font-size: 1.8rem;
+  margin: 20px 0;
+  color: var(--second);
+}
+
+.home-container .hpdc {
+  color: var(--second); /* Barva textu pro HPDC */
+  cursor: pointer;
+}
+
+.home-container .tooltip {
+  position: absolute;
+  top: -40px; /* Zobrazení nad textem */
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  opacity: 0;
+  pointer-events: none; /* Zamezí interakci s tooltipem */
+  transition: opacity 0.3s;
+  z-index: 10; /* Ujistíme se, že tooltip bude na vrchu ostatních prvků */
+}
+
+.home-container .hpdc:hover + .tooltip {
+  opacity: 1;
+}
+
+//-----------------------------Services--------------------------------
+.services-container {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.service-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  white-space: nowrap;  /* Zajistí, že text nebude zalamován */
+  color: #333;
+  opacity: 1;  /* Zajistí, že text je viditelný */
+  transform: translateX(0); /* Zajistí, že text je na správné pozici */
+}
+
+.service-title + p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-top: 20px;
+}
+.contact-button-container {
+  display: flex;
+  justify-content: left;
+  margin-top: 30px;
+}
+
+.contact-button {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: var(--hover); /* Zde můžeš použít svou vlastní barvu */
+  color: white;
+  text-decoration: none; /* Zajišťuje, že odkaz nebude podtržený */
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: darkred; /* Efekt při najetí na odkaz */
+}
+
+.contact-button:visited {
+  color: white; /* Zajišťuje, že text zůstane bílý i po kliknutí */
+}
+
+.contact-button:focus {
+  outline: none; /* Zrušení rámečku při zaměření na odkaz */
 }

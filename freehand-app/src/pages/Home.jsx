@@ -1,14 +1,17 @@
-import React, { useRef, useEffect } from 'react';
+import React, {  useState ,useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Home = () => {
+    const [showTooltip, setShowTooltip] = useState(false);
     const containerRef = useRef(null);
     const headerImageRef = useRef(null);
     const titleRef = useRef(null);
     const subtitleRef = useRef(null);
     const linksRef = useRef([]);
+    const hpdcRef = useRef(null);
 
     useEffect(() => {
         document.title = "Home - Ing. René Kafka";
@@ -102,6 +105,7 @@ const Home = () => {
             });
         };
 
+    
         // Přidání event listeneru pro každé písmeno
         const titleLetters = titleRef.current.querySelectorAll('span');
         titleLetters.forEach((letter) => {
@@ -116,6 +120,8 @@ const Home = () => {
                 letter.removeEventListener('mouseleave', handleMouseLeave); // Odstranění event listeneru pro opuštění
             });
         };
+        //
+        
     }, []);
 
     return (
@@ -127,13 +133,25 @@ const Home = () => {
                         <span key={index}>{char === " " ? "\u00A0" : char}</span> // Přidání mezer jako span
                     ))}
                 </h1>
-                <p className="sub-title" ref={subtitleRef}>Expert v oboru slévarenství (HPDC)</p>
+                <p className="sub-title" ref={subtitleRef}>
+                    Expert v oboru slévarenství 
+                    <span 
+                        className="hpdc" 
+                        ref={hpdcRef}  // Přidáme ref pro HPDC text
+                        onMouseEnter={() => setShowTooltip(true)} 
+                        onMouseLeave={() => setShowTooltip(false)}
+                    >
+                         (HPDC)
+                    </span>
+                    {showTooltip && <span className="tooltip">High Pressure Die Casting</span>}
+                </p>
                 <div className="links" ref={el => linksRef.current.push(el)}>
-                    <Link to="/about" className="link"><span></span>O nás</Link>
-                    <Link to="/contact" className="link"><span></span>Kontakt</Link>
-                    <Link to="/services" className="link"><span></span>Služby</Link>
+                    <Link to="/o-mne" className="link"><span></span>o mně</Link>
+                    <Link to="/sluzby" className="link"><span></span>služby</Link>
+                    <Link to="/kontakt" className="link"><span></span>kontakt</Link>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
