@@ -15,6 +15,7 @@ const Contact = () => {
   const linksRef = useRef(null);
 
   useEffect(() => {
+    document.title = "Kontakt - Ing. René Kafka";
     // Animace pro celé kontaktní sekci
     gsap.fromTo(containerRef.current, 
       { opacity: 0, y: -50 }, 
@@ -60,7 +61,7 @@ const Contact = () => {
           </div>
           <div className="contact-item">
             <h3>Adresa:</h3>
-            <p>Mesit & Roders, Náměstí 123, 110 00 Praha, Česká republika</p>
+            <p>MESIT & RÖDERS v. o. s., Sokolovská 573, 686 01 Uherské Hradiště, Česká republika</p>
           </div>
         </div>
       </div>

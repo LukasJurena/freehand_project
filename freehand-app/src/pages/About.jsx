@@ -18,6 +18,7 @@ function About() {
   ];
 
   useEffect(() => {
+    document.title = "O mně - Ing. René Kafka";
     // ScrollTrigger pro animaci postupného zobrazování
     events.forEach((_, index) => {
         gsap.fromTo(
