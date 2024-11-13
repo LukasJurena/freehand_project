@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Navbar from "../components/Navbar"; // Import navbar komponenty
 import Footer from "../components/Footer"; // Import footer komponenty
-
+import { Link } from 'react-router-dom';
 const Services = () => {
   // Odkazy na elementy pro animace
   const titleRef1 = useRef(null);
@@ -58,7 +58,7 @@ const Services = () => {
           Technická a technologická podpora v oblasti HPDC se specializací na
           vysokotlaké licí stroje Bühler. Možnost zavádění nových výrobních
           zakázek, kompletní programace automatických licích center s vysokými
-          požadavky na odlitku v automotivu a dalších oblastech. Optimalizace
+          požadavky na odlitky v automotivu a dalších oblastech. Optimalizace
           výrobního procesu, úspora energií, zavádění mikropostřikové technologie,
           vakuových systémů Fondarex a programování robotů Kuka/Reis.
           Taktéž nabízím školení v rozsáhlé oblasti slévárenství
@@ -66,18 +66,12 @@ const Services = () => {
         </p>
         <h1 className="service-title" ref={titleRef2}>Profesionální přístup k výrobě a kvalitě</h1>
         <p className="service-text" ref={textRef}>
-          Ve výrobním procesu to společně dotáhneme od začátku až dokonce, začneme u tavení materiálu a náročných chemických analýz za pomocí spektrometru, přes udržování kovu a jeho standardizaci kvality, provedu vás kompletním nastavením a sežízením licího centra pro automatický provoz pro váš produkt a v nepodlední řadě splníme všechny požadavky na kvalitu. Vnitřní struktura odlitku za pomocí RTG a CT, rozměrové klasifikace za pomocí 3D měření a nakonec následné opracování finální produktu a dodání k zákazníkovi.
+          Ve výrobním procesu to společně dotáhneme od začátku až dokonce, začneme u tavení materiálu a náročných chemických analýz za pomocí spektrometru, přes udržování kovu a jeho standardizaci kvality, provedu vás kompletním nastavením a sežízením licího centra pro automatický provoz pro váš produkt a v neposlední řadě splníme všechny požadavky na kvalitu. Vnitřní struktura odlitku za pomocí RTG a CT, rozměrové klasifikace za pomocí 3D měření a nakonec následné opracování finální produktu a dodání k zákazníkovi.
         </p>
 
         {/* Tlačítko "Máte zájem?" */}
-        <div className="contact-button-container">
-        <a 
-            ref={buttonRef}
-            href="/kontakt"
-            className="contact-button"
-        >
-            Máte zájem? Kontakt
-        </a>
+        <div className="contact-button-container" ref={buttonRef}>
+        <a><Link to="/kontakt" className="contact-button"><span></span>kontakt</Link></a>
         </div>
       </div>
       <Footer /> {/* Footer */}
