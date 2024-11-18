@@ -134,7 +134,7 @@ const Home = () => {
                     ))}
                 </h1>
                 <p className="sub-title" ref={subtitleRef}>
-                    Expert v oboru slévarenství 
+                    Expert v oboru slévárenství 
                     <span 
                         className="hpdc" 
                         ref={hpdcRef}  // Přidáme ref pro HPDC text

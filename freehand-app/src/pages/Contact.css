@@ -10,6 +10,7 @@
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 30px;
+    margin-top: 20%;
     color: var(--main); /* Použití barvy z proměnné */
   }
   

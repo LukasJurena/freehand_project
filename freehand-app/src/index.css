@@ -282,7 +282,8 @@ button:focus-visible {
 
   .contact-button {
     padding: 10px 20px; /* Zmenšení tlačítka */
-    font-size: 1rem;    /* Zmenšení velikosti textu tlačítka */
+    font-size: 1rem;
+    justify-content: center;    /* Zmenšení velikosti textu tlačítka */
   }
 }
 
@@ -298,6 +299,7 @@ button:focus-visible {
   .contact-button {
     padding: 8px 16px;
     font-size: 0.9rem;
+    justify-content: center;
   }
 }
 //--------------------------------About-------------------------------------
