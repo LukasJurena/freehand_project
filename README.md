@@ -1,5 +1,5 @@
 This page is already online: https://rene-kafka.vercel.app/
-
+>Developed in Vite React + React Router Dom, GSAP
 <img width="2048" alt="Snímek obrazovky 2024-11-19 v 8 20 20" src="https://github.com/user-attachments/assets/4c0b419b-c348-4289-a975-e03e4bf31cfa">
 
 <img width="380" alt="Snímek obrazovky 2024-11-19 v 8 20 52" src="https://github.com/user-attachments/assets/dda90508-7cbf-4b6c-9ca8-e26aaf461341">
